@@ -16,8 +16,8 @@
 # (Site settings > Environment variables), NO aca.
 #
 #   OPENROUTER_API_KEY          (secret, solo servidor)
-#   OPENROUTER_MODEL            ej: nvidia/nemotron-3.5-lightning:free
-#   OPENROUTER_MODEL_FALLBACK   ej: z-ai/glm-5.2:free  (puede ser lista)
+#   OPENROUTER_MODEL            (modelo a usar)
+#   OPENROUTER_MODEL_FALLBACK   (modelo a usar en caso de fallo)
 #   GOOGLE_SCRIPT_URL           URL /exec del despliegue de Apps Script
 #
 # Se definen en el panel porque si estan en un .env committed el build las
