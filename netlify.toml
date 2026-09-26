@@ -1,0 +1,24 @@
+# Netlify: https://docs.netlify.com/build/configure-builds/
+#
+# El build command y el publish dir los detecta Netlify solo para Astro, pero
+# estan explicitos aca para que quede claro donde busca el sitio.
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  # Astro 7 requiere Node >= 22.12.0. Sin esto Netlify usa una version vieja
+  # y la instalacion de dependencias falla.
+  NODE_VERSION = "22"
+
+# Variables de entorno: definilas en el panel de Netlify
+# (Site settings > Environment variables), NO aca.
+#
+#   OPENROUTER_API_KEY          (secret, solo servidor)
+#   OPENROUTER_MODEL            ej: nvidia/nemotron-3.5-lightning:free
+#   OPENROUTER_MODEL_FALLBACK   ej: z-ai/glm-5.2:free  (puede ser lista)
+#   GOOGLE_SCRIPT_URL           URL /exec del despliegue de Apps Script
+#
+# Se definen en el panel porque si estan en un .env committed el build las
+# inlinea en el bundle del servidor.
