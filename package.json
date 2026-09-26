@@ -12,9 +12,21 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^7.3.5"
+    "@astrojs/node": "^11.1.6",
+    "@astrojs/react": "^7.0.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/material": "^9.4.0",
+    "astro": "^7.3.5",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
   },
   "allowScripts": {
     "esbuild": true
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@types/node": "^26.6.2",
+    "typescript": "^6.0.3"
   }
 }

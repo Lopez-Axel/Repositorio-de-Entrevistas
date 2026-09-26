@@ -1,0 +1,27 @@
+---
+const { showNav = true } = Astro.props;
+---
+
+<header class="app-header">
+  <div class="app-header__inner">
+    <a class="brand" href="/">
+      <span class="brand__mark" aria-hidden="true">IE</span>
+      <span class="brand__text">
+        <span class="brand__title">Plataforma de Entrevistas</span>
+        <span class="brand__subtitle">Oportunidades de software para pequeños negocios</span>
+      </span>
+    </a>
+    {
+      showNav && (
+        <nav class="header-nav" aria-label="Principal">
+          <a class="header-nav__link" href="/">
+            Inicio
+          </a>
+          <a class="header-nav__link" href="/interview/new">
+            Nueva entrevista
+          </a>
+        </nav>
+      )
+    }
+  </div>
+</header>

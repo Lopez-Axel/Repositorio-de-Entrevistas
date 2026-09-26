@@ -1,0 +1,6 @@
+
+> my-interview@0.0.1 preview
+> astro preview --port 4411
+
+{"message":"Enabling sessions with filesystem storage","label":"@astrojs/node","level":"info"}
+{"message":"Server listening on http://localhost:4411","label":"@astrojs/node","level":"info"}

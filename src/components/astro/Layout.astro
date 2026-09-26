@@ -1,0 +1,31 @@
+---
+import "../../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Plataforma de Entrevistas",
+  description = "Entrevistas asistidas por IA para descubrir oportunidades de software en pequeños negocios.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#4f46e5" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234f46e5'/%3E%3Cpath d='M9 12h14M9 17h14M9 22h9' stroke='white' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="app-shell">
+      <slot />
+    </div>
+  </body>
+</html>

@@ -1,11 +1,26 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../components/astro/Layout.astro";
+import Header from "../components/astro/Header.astro";
+import HomePage from "../components/react/HomePage.tsx";
 ---
 
 <Layout>
-	<Welcome />
+  <Header />
+  <main class="app-main">
+    <section class="hero">
+      <span class="hero__eyebrow">Descubrimiento de oportunidades</span>
+      <h1 class="hero__title">Encontrá el próximo software que un negocio necesita</h1>
+      <p class="hero__text">
+        Guiá la entrevista, transcribí las respuestas en vivo y guardalas en
+        Google Sheets. Si después querés, pedís el análisis y el modelo detecta
+        problemas, necesidades y oportunidades de software con la evidencia de
+        cada hallazgo.
+      </p>
+      <div class="hero__actions">
+        <a class="button button--primary" href="/interview/new">Comenzar entrevista</a>
+        <a class="button button--ghost" href="#entrevistas">Ver entrevistas guardadas</a>
+      </div>
+    </section>
+    <HomePage client:load />
+  </main>
 </Layout>

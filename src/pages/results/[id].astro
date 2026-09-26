@@ -1,0 +1,16 @@
+---
+import Layout from "../../components/astro/Layout.astro";
+import Header from "../../components/astro/Header.astro";
+import AnalysisResultsPage from "../../components/react/AnalysisResultsPage.tsx";
+
+export const prerender = false;
+
+const { id } = Astro.params;
+---
+
+<Layout title="Resultados · Plataforma de Entrevistas">
+  <Header showNav={false} />
+  <main class="app-main">
+    <AnalysisResultsPage id={id ?? ""} client:load />
+  </main>
+</Layout>

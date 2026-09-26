@@ -1,0 +1,12 @@
+---
+import Layout from "../../components/astro/Layout.astro";
+import Header from "../../components/astro/Header.astro";
+import NewInterviewForm from "../../components/react/NewInterviewForm.tsx";
+---
+
+<Layout title="Nueva entrevista · Plataforma de Entrevistas">
+  <Header />
+  <main class="app-main">
+    <NewInterviewForm client:load />
+  </main>
+</Layout>
