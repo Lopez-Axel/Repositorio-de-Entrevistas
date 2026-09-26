@@ -11,6 +11,11 @@
   # Astro 7 requiere Node >= 22.12.0. Sin esto Netlify usa una version vieja
   # y la instalacion de dependencias falla.
   NODE_VERSION = "22"
+  # Secrets Scanning marca como secreto cualquier valor que parezca una credencial.
+  # Estas tres son identificadores publicos de proveedor (el nombre del modelo y
+  # la URL del webhook), no credenciales, asi que se excluyen del escaneo.
+  # OJO: la API key NO va aca, esa es una credencial real.
+  SECRETS_SCAN_OMIT_KEYS = "OPENROUTER_MODEL,OPENROUTER_MODEL_FALLBACK,GOOGLE_SCRIPT_URL"
 
 # Variables de entorno: definilas en el panel de Netlify
 # (Site settings > Environment variables), NO aca.
@@ -18,7 +23,7 @@
 #   OPENROUTER_API_KEY          (secret, solo servidor)
 #   OPENROUTER_MODEL            (modelo a usar)
 #   OPENROUTER_MODEL_FALLBACK   (modelo a usar en caso de fallo)
-#   GOOGLE_SCRIPT_URL           URL /exec del despliegue de Apps Script
+#   GOOGLE_SCRIPT_URL           (URL del webhook, termino /exec)
 #
 # Se definen en el panel porque si estan en un .env committed el build las
 # inlinea en el bundle del servidor.
